@@ -202,7 +202,7 @@ function App() {
                 className="w-10 h-10 rounded-xl shadow-[0_0_15px_rgba(250,204,21,0.5)] object-cover"
                 src="/logo.png"
               />
-              <span className="font-extrabold text-xl tracking-tight text-white">Whisk <span className="text-primary">Automation</span></span>
+              <span className="font-extrabold text-xl tracking-tight text-white">Meta Ai   <span className="text-primary">Automation</span></span>
             </div>
 
             <div className="hidden md:flex items-center gap-8 font-medium text-sm">
@@ -308,7 +308,7 @@ function App() {
                 <div className="col-span-1 md:col-span-2">
                   <div className="flex items-center gap-2 mb-6 cursor-pointer" onClick={() => navigateTo('home')}>
                     <img alt="MetaAi Automator Logo" className="w-8 h-8 rounded-lg object-cover" src="/logo.png" />
-                    <span className="font-extrabold text-xl text-white">Whisk <span className="text-primary">Automation</span></span>
+                    <span className="font-extrabold text-xl text-white">Meta Ai   <span className="text-primary">Automation</span></span>
                   </div>
                   <p className="text-slate-500 max-w-sm mb-6">
                     {t.hero.subtitle}

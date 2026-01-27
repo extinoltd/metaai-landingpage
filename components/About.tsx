@@ -20,8 +20,8 @@ export const About = () => {
             </div>
             <h2 className="text-3xl font-bold text-white mb-6 relative z-10">Our Mission</h2>
             <p className="text-slate-300 text-lg leading-relaxed relative z-10">
-              At MetaAi Automator, we believe that <span className="text-primary font-bold">creativity should flow, not click</span>. 
-              Google Labs' Whisk (formerly ImageFX) is an incredible tool for generation, but its interface wasn't built for professional, high-volume workflows. 
+              At MetaAi Automator, we believe that <span className="text-primary font-bold">creativity should flow, not click</span>.
+              Google Labs' Meta Ai   (formerly ImageFX) is an incredible tool for generation, but its interface wasn't built for professional, high-volume workflows.
               We created this tool to help designers, agencies, and power users reclaim their time by automating the repetitive parts of the creative process.
             </p>
           </div>
@@ -48,8 +48,8 @@ export const About = () => {
               MetaAi Automator started as a community script. We listen to our users' feedback daily to add features like auto-downloading and persona rewriting.
             </p>
           </div>
-          
-           <div className="p-8 rounded-3xl bg-surface border border-white/5 hover:border-primary/30 transition-all group">
+
+          <div className="p-8 rounded-3xl bg-surface border border-white/5 hover:border-primary/30 transition-all group">
             <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 mb-6 group-hover:scale-110 transition-transform">
               <Coffee size={24} />
             </div>
@@ -72,23 +72,23 @@ export const About = () => {
 
         {/* Story Section */}
         <div className="flex flex-col md:flex-row items-center gap-12 bg-surface/30 p-10 rounded-[3rem] border border-white/5">
-           <div className="flex-1">
-              <h2 className="text-3xl font-bold text-white mb-6">The Story</h2>
-              <p className="text-slate-300 mb-6 leading-relaxed">
-                It began late one night in 2024. Our founder was working on a project that required 500 variations of a specific sci-fi aesthetic. 
-                After clicking "Generate" for the 50th time manually, they realized there had to be a better way.
-              </p>
-              <p className="text-slate-300 leading-relaxed">
-                What started as a rough Python script for personal use quickly evolved into a robust Chrome Extension used by thousands of creators. 
-                Today, MetaAi Automator is the standard for workflow efficiency in the AI art space.
-              </p>
-           </div>
-           <div className="w-full md:w-1/3">
-              <div className="aspect-square rounded-[2rem] bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center border border-white/10 relative overflow-hidden">
-                 <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/tech/800')] opacity-30 bg-cover bg-center mix-blend-overlay"></div>
-                 <Users size={64} className="text-white relative z-10" />
-              </div>
-           </div>
+          <div className="flex-1">
+            <h2 className="text-3xl font-bold text-white mb-6">The Story</h2>
+            <p className="text-slate-300 mb-6 leading-relaxed">
+              It began late one night in 2024. Our founder was working on a project that required 500 variations of a specific sci-fi aesthetic.
+              After clicking "Generate" for the 50th time manually, they realized there had to be a better way.
+            </p>
+            <p className="text-slate-300 leading-relaxed">
+              What started as a rough Python script for personal use quickly evolved into a robust Chrome Extension used by thousands of creators.
+              Today, MetaAi Automator is the standard for workflow efficiency in the AI art space.
+            </p>
+          </div>
+          <div className="w-full md:w-1/3">
+            <div className="aspect-square rounded-[2rem] bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center border border-white/10 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/tech/800')] opacity-30 bg-cover bg-center mix-blend-overlay"></div>
+              <Users size={64} className="text-white relative z-10" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

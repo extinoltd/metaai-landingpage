@@ -41,14 +41,14 @@ export const RedCircleSVG = ({ className = "" }: { className?: string }) => (
 const TESTIMONIALS = [
   {
     rating: 5,
-    quote: "I was looking for how to download all images from Meta Ai and found this. It turned a 40-hour work week into a 4-hour monitoring task.",
+    quote: "I was looking for how to download all images from Meta Ai   and found this. It turned a 40-hour work week into a 4-hour monitoring task.",
     name: "Marcus Sterling",
     role: "Creative Director @ Nexa",
     img: "https://picsum.photos/100/100?random=1"
   },
   {
     rating: 5,
-    quote: "The best Meta Ai extensions usually crash, but this one is rock solid. Whisk AI batch processing is a game changer.",
+    quote: "The best Meta Ai   extensions usually crash, but this one is rock solid. Meta Ai   AI batch processing is a game changer.",
     name: "Sarah Chen",
     role: "Independent AI Artist",
     img: "https://picsum.photos/100/100?random=2",
@@ -56,14 +56,14 @@ const TESTIMONIALS = [
   },
   {
     rating: 5,
-    quote: "Finally, I can automate Meta Ai prompts without getting banned. The human-like pacing is incredibly smart.",
+    quote: "Finally, I can automate Meta Ai   prompts without getting banned. The human-like pacing is incredibly smart.",
     name: "David Thorne",
     role: "Stock Media Producer",
     img: "https://picsum.photos/100/100?random=3"
   },
   {
     rating: 5,
-    quote: "Whisk AI for power users is right. I've scaled my agency's output by 10x using the Meta Ai multiple images at once feature.",
+    quote: "Meta Ai   AI for power users is right. I've scaled my agency's output by 10x using the Meta Ai   multiple images at once feature.",
     name: "Elena Rodriguez",
     role: "Agency Owner",
     img: "https://picsum.photos/100/100?random=4"
@@ -113,7 +113,7 @@ export const Home = () => {
           <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter mb-8 text-white drop-shadow-[0_0_25px_rgba(0,0,0,0.5)] reveal reveal-delay-100">
             {t.hero.titlePrefix} <br />
             {t.hero.titleMiddle} <span className="relative inline-block mt-2">
-              <span className="yellow-gradient-text relative z-10 px-4">{t.hero.titleSuffix}</span>
+              <span className="highlight-text relative z-10 px-4">{t.hero.titleSuffix}</span>
               <RedCircleSVG className="-left-6 -top-4 w-[140%] h-[160%] rotate-1" />
             </span>
           </h1>
@@ -136,8 +136,8 @@ export const Home = () => {
       <section id="video" className="py-24 relative overflow-hidden section-glow scroll-mt-32">
         <div className="max-w-5xl mx-auto px-6 reveal">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 uppercase italic text-white">Streamline <span className="text-primary">Meta Ai</span></h2>
-            <p className="text-slate-400">See Whisk AI batch processing in action. Generate 1000s of images hands-free.</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 uppercase italic text-white">Streamline <span className="text-primary">Meta Ai  </span></h2>
+            <p className="text-slate-400">See Meta Ai   AI batch processing in action. Generate 1000s of images hands-free.</p>
           </div>
           <div className="relative reveal reveal-delay-200">
             <div className="absolute -inset-1 bg-primary/20 rounded-[3rem] blur-2xl transition duration-500" />
@@ -168,7 +168,7 @@ export const Home = () => {
             <div className="relative rounded-[3rem] bg-[#080808] border border-white/10 p-12 md:p-20 text-center overflow-hidden shadow-2xl">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-sm font-bold mb-8 mx-auto reveal reveal-delay-100">
-                <Zap size={14} fill="currentColor" /> Whisk AI for Power Users
+                <Zap size={14} fill="currentColor" /> Meta Ai   AI for Power Users
               </div>
 
               <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight reveal reveal-delay-200">
@@ -176,7 +176,7 @@ export const Home = () => {
               </h2>
 
               <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed reveal reveal-delay-300">
-                Every hour you spend manually generating is wasted. Use our Meta Ai auto downloader and prompt automator to reclaim your time.
+                Every hour you spend manually generating is wasted. Use our Meta Ai   auto downloader and prompt automator to reclaim your time.
               </p>
 
               {/* Features Grid */}
@@ -193,11 +193,11 @@ export const Home = () => {
               </div>
 
               <div className="flex flex-col items-center gap-6 reveal reveal-delay-300">
-                <Button size="lg" className="w-full md:w-auto shadow-[0_0_40px_rgba(250,204,21,0.3)] !text-xl !py-5" onClick={() => window.open(EXTENSION_URL, '_blank')}>
+                <Button size="lg" className="w-full md:w-auto shadow-[0_0_40px_rgba(128,198,253,0.3)] !text-xl !py-5" onClick={() => window.open(EXTENSION_URL, '_blank')}>
                   {t.cta.title} <Arrow className="mx-2" size={24} />
                 </Button>
                 <p className="text-xs text-slate-500 font-medium uppercase tracking-widest">
-                  Best Meta Ai Extensions • Lifetime updates • 30-day money-back
+                  Best Meta Ai   Extensions • Lifetime updates • 30-day money-back
                 </p>
               </div>
             </div>
@@ -215,7 +215,7 @@ export const Home = () => {
                 <path d="M2 10C30 3 170 3 198 10" stroke="#FACC15" strokeLinecap="round" strokeWidth="4"></path>
               </svg>
             </h2>
-            <p className="text-slate-400 mt-6">Why we are the premium WhiskAutomator alternative.</p>
+            <p className="text-slate-400 mt-6">Why we are the premium Meta Ai  Automator alternative.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Old Way */}
@@ -228,8 +228,8 @@ export const Home = () => {
               </div>
               <div className="space-y-8">
                 {[
-                  { t: "One by One Generation", d: "Manually typing prompts. No Meta Ai multiple images at once capability." },
-                  { t: "Right-Click Save", d: "No Meta Ai auto downloader. Saving files takes hours." },
+                  { t: "One by One Generation", d: "Manually typing prompts. No Meta Ai   multiple images at once capability." },
+                  { t: "Right-Click Save", d: "No Meta Ai   auto downloader. Saving files takes hours." },
                   { t: "Risk of Bans", d: "Spam clicking triggers bot detection quickly." }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
@@ -249,7 +249,7 @@ export const Home = () => {
               </div>
             </div>
 
-            {/* Whisk Way */}
+            {/* Meta Ai   Way */}
             <div className="p-10 rounded-[3rem] neon-border bg-primary/5 backdrop-blur-md relative overflow-hidden group shadow-[0_0_30px_rgba(250,204,21,0.15)] reveal reveal-delay-300">
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-30 transition-opacity">
                 <Zap size={120} className="text-primary" />
@@ -259,9 +259,9 @@ export const Home = () => {
               </div>
               <div className="space-y-8">
                 {[
-                  { t: "Whisk AI Batch Processing", d: "Upload 10,000 prompts. We automate Meta Ai prompts entirely." },
-                  { t: "Auto Downloader Included", d: "We answer 'how to download all images from Meta Ai' automatically." },
-                  { t: "Smart Pacing Engine", d: "Proprietary algorithm stays under the radar. The safe Whisk AI for power users." }
+                  { t: "Meta Ai   AI Batch Processing", d: "Upload 10,000 prompts. We automate Meta Ai   prompts entirely." },
+                  { t: "Auto Downloader Included", d: "We answer 'how to download all images from Meta Ai  ' automatically." },
+                  { t: "Smart Pacing Engine", d: "Proprietary algorithm stays under the radar. The safe Meta Ai   AI for power users." }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="w-12 h-12 shrink-0 rounded-full bg-primary/20 flex items-center justify-center text-primary shadow-[0_0_15px_rgba(250,204,21,0.3)]">
@@ -288,10 +288,10 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 reveal">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
-              Best Meta Ai <span className="text-primary">Extensions</span> Features
+              Best Meta Ai   <span className="text-primary">Extensions</span> Features
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              Built for those asking "How to bulk generate images in Meta Ai?". Every feature is designed for scale.
+              Built for those asking "How to bulk generate images in Meta Ai  ?". Every feature is designed for scale.
             </p>
           </div>
 
@@ -302,7 +302,7 @@ export const Home = () => {
                 key={idx}
                 className={`w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-primary border border-primary/50 rounded-[2.5rem] p-8 hover:scale-105 transition-all duration-300 group shadow-lg flex flex-col reveal reveal-delay-${(idx % 4) * 100}`}
               >
-                <div className="w-14 h-14 rounded-2xl bg-black text-primary flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform shadow-xl">
+                <div className="w-14 h-14 rounded-2xl bg-black text-white flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform shadow-xl">
                   <feature.icon size={28} />
                 </div>
                 <h3 className="font-extrabold text-black mb-3 text-lg leading-tight">{feature.title}</h3>
@@ -318,16 +318,16 @@ export const Home = () => {
         <div className="max-w-6xl mx-auto px-6 reveal">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4 uppercase text-white leading-tight">
-              Automate Meta Ai <br />
+              Automate Meta Ai   <br />
               <span className="relative inline-block mt-3">
                 <span className="font-handwriting absolute -top-5 -left-8 text-white text-2xl md:text-3xl -rotate-12 drop-shadow-md">
                   Smart
                 </span>
-                <span className="yellow-gradient-text relative z-10 px-6">Prompts</span>
+                <span className="highlight-text relative z-10 px-6">Prompts</span>
                 <RedCircleSVG className="-left-1 -top-2 w-[110%] h-[120%] -rotate-1" />
               </span>
             </h2>
-            <p className="text-slate-400 mt-8">Experience Meta Ai workflow automation. See how we transform keywords into prompts.</p>
+            <p className="text-slate-400 mt-8">Experience Meta Ai   workflow automation. See how we transform keywords into prompts.</p>
           </div>
 
           <PersonaDemo />
@@ -339,7 +339,7 @@ export const Home = () => {
       <section id="testimonials" className="py-24 relative section-glow overflow-hidden scroll-mt-32 reveal">
         <div className="text-center mb-16 relative px-6">
           <h2 className="text-4xl md:text-5xl font-extrabold italic inline-block relative text-white">
-            Rated #1 of <span className="text-primary">Best Meta Ai Extensions</span>
+            Rated #1 of <span className="text-primary">Best Meta Ai   Extensions</span>
             <svg className="absolute -bottom-4 left-0 w-full" fill="none" height="12" viewBox="0 0 200 12" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 10C40 2 160 2 195 10" stroke="#FACC15" strokeLinecap="round" strokeWidth="4"></path>
             </svg>
@@ -375,7 +375,7 @@ export const Home = () => {
           <div className="text-center mb-16 reveal">
             <div className="inline-flex items-center gap-3 px-8 py-3 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-500 text-lg md:text-xl font-bold mb-8 animate-pulse shadow-[0_0_30px_rgba(244,63,94,0.2)]">
               <Zap size={24} fill="currentColor" />
-              <span>Limited: Export Whisk AI Images in Bulk <span className="underline decoration-wavy">50% OFF</span></span>
+              <span>Limited: Export Meta Ai   AI Images in Bulk <span className="underline decoration-wavy">50% OFF</span></span>
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4 uppercase text-white">
               {t.pricing.title} <span className="text-primary">Now</span>
@@ -392,7 +392,7 @@ export const Home = () => {
                 <span className="text-sm text-slate-500">/mo</span>
               </div>
               <ul className="space-y-4 mb-8 text-left text-sm text-slate-300">
-                <li className="flex gap-2"><Check size={16} className="text-primary" /> Whisk AI batch processing</li>
+                <li className="flex gap-2"><Check size={16} className="text-primary" /> Meta Ai   AI batch processing</li>
                 <li className="flex gap-2"><Check size={16} className="text-primary" /> Auto Downloader</li>
                 <li className="flex gap-2"><Check size={16} className="text-primary" /> Auto-Save to Disk</li>
               </ul>
@@ -411,9 +411,9 @@ export const Home = () => {
               </div>
               <p className="text-xs text-green-400 font-bold mb-6">{t.pricing.save}</p>
               <ul className="space-y-4 mb-8 text-left text-sm text-slate-200">
-                <li className="flex gap-2"><Check size={16} className="text-primary" /> Meta Ai auto downloader</li>
+                <li className="flex gap-2"><Check size={16} className="text-primary" /> Meta Ai   auto downloader</li>
                 <li className="flex gap-2"><Check size={16} className="text-primary" /> Priority Support</li>
-                <li className="flex gap-2"><Check size={16} className="text-primary" /> Whisk AI multiple images</li>
+                <li className="flex gap-2"><Check size={16} className="text-primary" /> Meta Ai   AI multiple images</li>
                 <li className="flex gap-2"><Check size={16} className="text-primary" /> Cancel Anytime</li>
               </ul>
               <Button className="w-full py-4 text-lg" onClick={() => window.open(EXTENSION_URL, '_blank')}>{t.pricing.yearly}</Button>
@@ -440,7 +440,7 @@ export const Home = () => {
       {/* FAQ */}
       <section id="faq" className="py-24 relative section-glow scroll-mt-32">
         <div className="max-w-3xl mx-auto px-6 reveal">
-          <h2 className="text-4xl font-extrabold text-center mb-16 italic text-white">Google Whisk <span className="text-primary">{t.faq.title}</span></h2>
+          <h2 className="text-4xl font-extrabold text-center mb-16 italic text-white">Meta Ai   <span className="text-primary">{t.faq.title}</span></h2>
           <div className="space-y-4">
             {t.faq.items.map((faq: any, idx: number) => (
               <div key={idx} className="group reveal reveal-delay-100">
@@ -473,7 +473,7 @@ export const Home = () => {
           </p>
           <div className="flex flex-col items-center gap-6">
             <Button size="lg" className="px-10 py-5 text-xl" onClick={() => window.open(EXTENSION_URL, '_blank')}>
-              Automate Meta Ai <Arrow className="mx-2" />
+              Automate Meta Ai   <Arrow className="mx-2" />
             </Button>
             <div className="flex items-center gap-6 text-sm font-medium text-slate-500">
               <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary" /> No credit card required</span>

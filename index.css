@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #FACC15;
+  --color-primary: #0439C7;
   --color-background: #050505;
   --color-surface: #0F0F0F;
 
@@ -82,6 +82,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -92,6 +93,7 @@
       opacity: 0;
       transform: scale(0.9);
     }
+
     to {
       opacity: 1;
       transform: scale(1);
@@ -120,15 +122,16 @@ body {
 }
 
 /* Design System Classes */
+
 .neon-border {
-  border: 1px solid rgba(250, 204, 21, 0.3);
-  box-shadow: 0 0 20px rgba(250, 204, 21, 0.15);
+  border: 1px solid rgba(128, 198, 253, 0.3);
+  box-shadow: 0 0 20px rgba(128, 198, 253, 0.15);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .neon-border:hover {
-  border-color: #FACC15;
-  box-shadow: 0 0 40px rgba(250, 204, 21, 0.4);
+  border-color: #80C6FD;
+  box-shadow: 0 0 40px rgba(128, 198, 253, 0.4);
   transform: translateY(-2px);
 }
 
@@ -140,21 +143,21 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.yellow-gradient-text {
-  background: linear-gradient(180deg, #FFF133 0%, #FACC15 100%);
+.highlight-text {
+  background: linear-gradient(180deg, #6090FF 0%, #0439C7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 15px rgba(250, 204, 21, 0.3));
+  filter: drop-shadow(0 0 15px rgba(4, 57, 199, 0.3));
 }
 
 .cta-glow {
-  box-shadow: 0 0 25px rgba(250, 204, 21, 0.5);
+  box-shadow: 0 0 25px rgba(128, 198, 253, 0.5);
 }
 
 .cta-glow:hover {
-  box-shadow: 0 0 40px rgba(250, 204, 21, 0.7);
+  box-shadow: 0 0 40px rgba(128, 198, 253, 0.7);
 }
 
 /* Section Background Glow */

@@ -18,7 +18,7 @@ export const Support = () => {
             </div>
             <h3 className="font-bold text-white text-lg mb-2">Email Support</h3>
             <p className="text-slate-400 text-sm mb-6">Get a response within 24 hours.</p>
-            <a href="mailto:support@metaaiautomator.com" className="text-primary font-bold hover:underline">support@whisk.com</a>
+            <a href="mailto:support@metaaiautomator.com" className="text-primary font-bold hover:underline">support@Meta Ai  .com</a>
           </div>
 
           <div className="p-8 rounded-3xl bg-surface border border-white/10 text-center hover:border-primary/50 transition-colors">
@@ -41,35 +41,35 @@ export const Support = () => {
         </div>
 
         <div className="bg-surface/50 border border-white/10 rounded-[2.5rem] p-8 md:p-12">
-           <h2 className="text-3xl font-bold text-white mb-8 text-center">Send us a message</h2>
-           <form className="space-y-6 max-w-2xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                 <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-300">Name</label>
-                    <input type="text" className="w-full px-5 py-3 rounded-xl bg-black border border-white/10 text-white focus:border-primary outline-none transition-colors" placeholder="John Doe" />
-                 </div>
-                 <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-300">Email</label>
-                    <input type="email" className="w-full px-5 py-3 rounded-xl bg-black border border-white/10 text-white focus:border-primary outline-none transition-colors" placeholder="john@example.com" />
-                 </div>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Send us a message</h2>
+          <form className="space-y-6 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-300">Name</label>
+                <input type="text" className="w-full px-5 py-3 rounded-xl bg-black border border-white/10 text-white focus:border-primary outline-none transition-colors" placeholder="John Doe" />
               </div>
               <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-300">Subject</label>
-                   <select className="w-full px-5 py-3 rounded-xl bg-black border border-white/10 text-white focus:border-primary outline-none transition-colors">
-                      <option>General Inquiry</option>
-                      <option>Technical Support</option>
-                      <option>Billing</option>
-                      <option>Feature Request</option>
-                   </select>
+                <label className="text-sm font-bold text-slate-300">Email</label>
+                <input type="email" className="w-full px-5 py-3 rounded-xl bg-black border border-white/10 text-white focus:border-primary outline-none transition-colors" placeholder="john@example.com" />
               </div>
-              <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-300">Message</label>
-                  <textarea className="w-full px-5 py-3 rounded-xl bg-black border border-white/10 text-white focus:border-primary outline-none transition-colors min-h-[150px]" placeholder="How can we help you today?"></textarea>
-              </div>
-              <div className="text-center pt-4">
-                 <Button className="w-full md:w-auto">Send Message</Button>
-              </div>
-           </form>
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-bold text-slate-300">Subject</label>
+              <select className="w-full px-5 py-3 rounded-xl bg-black border border-white/10 text-white focus:border-primary outline-none transition-colors">
+                <option>General Inquiry</option>
+                <option>Technical Support</option>
+                <option>Billing</option>
+                <option>Feature Request</option>
+              </select>
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-bold text-slate-300">Message</label>
+              <textarea className="w-full px-5 py-3 rounded-xl bg-black border border-white/10 text-white focus:border-primary outline-none transition-colors min-h-[150px]" placeholder="How can we help you today?"></textarea>
+            </div>
+            <div className="text-center pt-4">
+              <Button className="w-full md:w-auto">Send Message</Button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

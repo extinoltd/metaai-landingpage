@@ -11,7 +11,7 @@ export const TermsOfService = () => {
         </div>
 
         <div className="bg-surface/30 border border-white/10 rounded-[2.5rem] p-8 md:p-12 space-y-12">
-          
+
           <section>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
@@ -25,7 +25,7 @@ export const TermsOfService = () => {
           </section>
 
           <section>
-             <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500">
                 <Scale size={20} />
               </div>
@@ -35,36 +35,36 @@ export const TermsOfService = () => {
               MetaAi Automator grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use the extension strictly in accordance with the terms of this Agreement.
             </p>
             <ul className="list-disc pl-6 space-y-2 text-slate-300">
-                <li>You may not reverse engineer, decompile, or disassemble the software.</li>
-                <li>You may not modify, adapt, or create derivative works from the software.</li>
+              <li>You may not reverse engineer, decompile, or disassemble the software.</li>
+              <li>You may not modify, adapt, or create derivative works from the software.</li>
             </ul>
           </section>
 
-           <section>
-             <div className="flex items-center gap-3 mb-6">
+          <section>
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-500">
                 <AlertTriangle size={20} />
               </div>
               <h2 className="text-2xl font-bold text-white">3. Disclaimers</h2>
             </div>
             <p className="text-slate-300 leading-relaxed mb-4">
-              The Service is provided on an "AS IS" and "AS AVAILABLE" basis. MetaAi Automator makes no warranties, expressed or implied, regarding the reliability or availability of the Meta Ai/Labs platform which this extension interacts with.
+              The Service is provided on an "AS IS" and "AS AVAILABLE" basis. MetaAi Automator makes no warranties, expressed or implied, regarding the reliability or availability of the Meta Ai  /Labs platform which this extension interacts with.
             </p>
             <p className="text-slate-300 leading-relaxed">
               You are responsible for maintaining the safety of your own Google account. MetaAi Automator is not responsible for bans or suspensions resulting from misuse of the automation features.
             </p>
           </section>
 
-           <section>
-             <div className="flex items-center gap-3 mb-6">
+          <section>
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500">
                 <ShieldCheck size={20} />
               </div>
               <h2 className="text-2xl font-bold text-white">4. Limitation of Liability</h2>
             </div>
-             <p className="text-slate-300 leading-relaxed">
-               In no event shall MetaAi Automator be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
-             </p>
+            <p className="text-slate-300 leading-relaxed">
+              In no event shall MetaAi Automator be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
+            </p>
           </section>
 
           <section className="pt-8 border-t border-white/10">
