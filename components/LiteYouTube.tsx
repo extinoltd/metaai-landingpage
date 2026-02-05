@@ -5,6 +5,8 @@ interface LiteYouTubeProps {
   className?: string;
   autoPlay?: boolean;
   posterQuality?: 'default' | 'mqdefault' | 'hqdefault' | 'sddefault' | 'maxresdefault';
+  posterFormat?: 'jpg' | 'webp';
+  priority?: boolean;
 }
 
 /**
@@ -16,9 +18,12 @@ export const LiteYouTube: React.FC<LiteYouTubeProps> = ({
   title,
   className = '',
   autoPlay = false,
-  posterQuality = 'hqdefault'
+  posterQuality = 'mqdefault',
+  posterFormat = 'webp',
+  priority = false
 }) => {
   const [isActive, setIsActive] = React.useState(autoPlay);
+  const [useFallbackPoster, setUseFallbackPoster] = React.useState(false);
 
   const videoSrc = React.useMemo(() => {
     const base = `https://www.youtube.com/embed/${videoId}`;
@@ -34,7 +39,12 @@ export const LiteYouTube: React.FC<LiteYouTubeProps> = ({
     return `${base}?${params.toString()}`;
   }, [isActive, videoId]);
 
-  const posterUrl = `https://i.ytimg.com/vi/${videoId}/${posterQuality}.jpg`;
+  const posterUrl = React.useMemo(() => {
+    const format = useFallbackPoster ? 'jpg' : posterFormat;
+    const folder = format === 'webp' ? 'vi_webp' : 'vi';
+    const extension = format === 'webp' ? 'webp' : 'jpg';
+    return `https://i.ytimg.com/${folder}/${videoId}/${posterQuality}.${extension}`;
+  }, [posterFormat, posterQuality, useFallbackPoster, videoId]);
 
   return (
     <div className={`lite-youtube relative w-full h-full overflow-hidden ${className}`}>
@@ -50,8 +60,11 @@ export const LiteYouTube: React.FC<LiteYouTubeProps> = ({
             alt={`${title} preview frame`}
             loading="lazy"
             decoding="async"
-            width={1280}
-            height={720}
+            width={640}
+            height={360}
+            sizes="(max-width: 768px) 100vw, 960px"
+            fetchPriority={priority ? 'high' : 'auto'}
+            onError={() => setUseFallbackPoster(true)}
           />
           <span className="lite-youtube__scrim" aria-hidden="true" />
           <span className="lite-youtube__play" aria-hidden="true">

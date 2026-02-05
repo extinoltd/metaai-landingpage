@@ -146,7 +146,8 @@ export const Home = () => {
               <LiteYouTube
                 videoId="wCnv514L0uM"
                 title="Meta Ai Automator demo"
-                posterQuality="sddefault"
+                posterQuality="hqdefault"
+                priority
               />
             </div>
           </div>
@@ -510,6 +511,7 @@ export const Home = () => {
               videoId="wCnv514L0uM"
               title="Meta Ai Automator demo"
               autoPlay
+              posterQuality="hqdefault"
             />
           </div>
         </div>
