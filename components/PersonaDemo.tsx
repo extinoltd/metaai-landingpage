@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Sparkles, Copy, RefreshCw, ExternalLink } from 'lucide-react';
-import { generateSmartPrompts } from '../services/geminiService';
 import { PersonaOption, LoadingState, GeneratedPrompt } from '../types';
 
 const PERSONAS: PersonaOption[] = [
@@ -14,7 +13,18 @@ const PERSONAS: PersonaOption[] = [
   { id: 'elements', label: 'Graphic Elements', description: 'Assets', systemInstruction: 'Focus on isolated elements, stickers, UI assets, and transparent backgrounds.' },
 ];
 
+type GenerateSmartPromptsFn = (typeof import('../services/geminiService'))['generateSmartPrompts'];
+
 export const PersonaDemo: React.FC = () => {
+  const generatorRef = React.useRef<GenerateSmartPromptsFn | null>(null);
+  const loadGenerator = React.useCallback(async () => {
+    if (!generatorRef.current) {
+      const module = await import('../services/geminiService');
+      generatorRef.current = module.generateSmartPrompts;
+    }
+    return generatorRef.current!;
+  }, []);
+
   const [apiKey, setApiKey] = useState('');
   const [keywords, setKeywords] = useState('');
   const [selectedPersona, setSelectedPersona] = useState<PersonaOption>(PERSONAS[0]);
@@ -23,12 +33,13 @@ export const PersonaDemo: React.FC = () => {
   const [results, setResults] = useState<GeneratedPrompt[]>([]);
 
   const handleGenerate = async () => {
-    if (!keywords.trim()) return;
+    if (!keywords.trim() || status === LoadingState.LOADING) return;
     setStatus(LoadingState.LOADING);
     try {
       // Split keywords by comma
       const keywordList = keywords.split(',').map(k => k.trim()).filter(k => k.length > 0);
-      const prompts = await generateSmartPrompts(keywordList, selectedPersona, count, apiKey);
+      const generatePrompts = await loadGenerator();
+      const prompts = await generatePrompts(keywordList, selectedPersona, count, apiKey);
       setResults(prompts);
       setStatus(LoadingState.SUCCESS);
     } catch (e) {
@@ -126,7 +137,7 @@ export const PersonaDemo: React.FC = () => {
         </div>
 
         {/* Right Column: Output */}
-        <div className="lg:col-span-7 h-full min-h-[600px] flex flex-col">
+        <div className="lg:col-span-7 h-full min-h-150 flex flex-col">
           <div className="relative h-full flex flex-col bg-surface/30 rounded-[2.5rem] border border-white/5 p-6 md:p-8">
             <div className="absolute -top-6 -right-4 font-handwriting text-primary text-4xl -rotate-12 z-20 select-none drop-shadow-[0_0_10px_rgba(128,198,253,0.8)]">Automated!</div>
 

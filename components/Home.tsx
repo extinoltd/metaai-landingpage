@@ -12,12 +12,22 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { Button } from './Button';
-import { PersonaDemo } from './PersonaDemo';
 import { LangContext } from '../LangContext';
 import { FEATURE_LIST } from '../translations';
 import { LiteYouTube } from './LiteYouTube';
 
 const EXTENSION_URL = 'https://chromewebstore.google.com/detail/oahcpmhnmcfjciaehfijhfjofjddjjij';
+
+const LazyPersonaDemo = React.lazy(() =>
+  import('./PersonaDemo').then(module => ({ default: module.PersonaDemo }))
+);
+
+const PersonaDemoSkeleton = () => (
+  <div className="neon-border rounded-[3rem] bg-background/40 p-12 text-center text-slate-500 animate-pulse" aria-live="polite">
+    <p className="font-bold tracking-wide uppercase text-sm text-slate-400">Loading Persona Demo</p>
+    <p className="text-slate-600 mt-3 text-sm">The interactive generator loads when this section enters view.</p>
+  </div>
+);
 
 // Reusable Red Circle Component
 export const RedCircleSVG = ({ className = "" }: { className?: string }) => (
@@ -101,6 +111,28 @@ export const Home = () => {
 
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
+  const personaSectionRef = React.useRef<HTMLElement | null>(null);
+  const [personaVisible, setPersonaVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    if (personaVisible) return;
+    const target = personaSectionRef.current;
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setPersonaVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [personaVisible]);
+
   return (
     <>
       {/* Hero Section */}
@@ -146,8 +178,6 @@ export const Home = () => {
               <LiteYouTube
                 videoId="wCnv514L0uM"
                 title="Meta Ai Automator demo"
-                posterQuality="hqdefault"
-                priority
               />
             </div>
           </div>
@@ -310,7 +340,7 @@ export const Home = () => {
       </section>
 
       {/* Generator / Persona Section */}
-      <section id="generator" className="py-24 relative section-glow scroll-mt-32">
+      <section id="generator" ref={personaSectionRef} className="py-24 relative section-glow scroll-mt-32">
         <div className="max-w-6xl mx-auto px-6 reveal">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4 uppercase text-white leading-tight">
@@ -325,9 +355,13 @@ export const Home = () => {
             </h2>
             <p className="text-slate-400 mt-8">Experience Meta Ai   workflow automation. See how we transform keywords into prompts.</p>
           </div>
-
-          <PersonaDemo />
-
+          {personaVisible ? (
+            <React.Suspense fallback={<PersonaDemoSkeleton />}>
+              <LazyPersonaDemo />
+            </React.Suspense>
+          ) : (
+            <PersonaDemoSkeleton />
+          )}
         </div>
       </section>
 
