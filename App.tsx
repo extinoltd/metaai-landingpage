@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import {
   Menu,
   X,
@@ -12,19 +12,20 @@ import { LangContext } from './LangContext';
 
 // Import Pages
 import { Home } from './components/Home';
-import { Support } from './components/Support';
-import { Documentation } from './components/Documentation';
-import { Blog } from './components/Blog';
-import { About } from './components/About';
-import { PrivacyPolicy } from './components/PrivacyPolicy';
-import { CookiePolicy } from './components/CookiePolicy';
-import { ThankYou } from './components/ThankYou';
-import { TermsOfService } from './components/TermsOfService';
 
 type View = 'home' | 'support' | 'docs' | 'blog' | 'about' | 'privacy_policy' | 'cookie-policy' | 'thank-you' | 'terms-of-service';
 
 const SUPPORTED_LANGS: Language[] = ['en', 'zh', 'es', 'ar', 'pt', 'de', 'ja', 'ko', 'nl', 'vi', 'tr', 'bn', 'th', 'pl', 'ru'];
 const EXTENSION_URL = 'https://chromewebstore.google.com/detail/kcclkkcbbfgcpknpnanhbpiffidjifgm';
+
+const Support = lazy(() => import('./components/Support').then(module => ({ default: module.Support })));
+const Documentation = lazy(() => import('./components/Documentation').then(module => ({ default: module.Documentation })));
+const Blog = lazy(() => import('./components/Blog').then(module => ({ default: module.Blog })));
+const About = lazy(() => import('./components/About').then(module => ({ default: module.About })));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy').then(module => ({ default: module.PrivacyPolicy })));
+const CookiePolicy = lazy(() => import('./components/CookiePolicy').then(module => ({ default: module.CookiePolicy })));
+const ThankYou = lazy(() => import('./components/ThankYou').then(module => ({ default: module.ThankYou })));
+const TermsOfService = lazy(() => import('./components/TermsOfService').then(module => ({ default: module.TermsOfService })));
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -188,9 +189,9 @@ function App() {
               WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 100%)'
             }}
           />
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 mix-blend-screen filter blur-[100px] animate-liquid" />
-          <div className="absolute top-1/4 right-1/4 w-[450px] h-[450px] bg-rose-500/5 mix-blend-screen filter blur-[100px] animate-liquid animation-delay-2000" />
-          <div className="absolute -bottom-32 left-1/2 w-[600px] h-[600px] bg-primary/5 mix-blend-screen filter blur-[120px] animate-liquid animation-delay-4000" />
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 mix-blend-screen filter blur-[100px] animate-liquid rounded-full" />
+          <div className="absolute top-1/4 right-1/4 w-[450px] h-[450px] bg-rose-500/5 mix-blend-screen filter blur-[100px] animate-liquid animation-delay-2000 rounded-full" />
+          <div className="absolute -bottom-32 left-1/2 w-[600px] h-[600px] bg-primary/5 mix-blend-screen filter blur-[120px] animate-liquid animation-delay-4000 rounded-full" />
         </div>
 
         {/* Navigation */}
@@ -200,7 +201,12 @@ function App() {
               <img
                 alt="MetaAi Automator Logo"
                 className="w-10 h-10 rounded-xl shadow-[0_0_15px_rgba(250,204,21,0.5)] object-cover"
-                src="/logo.png"
+                src="/logo.svg"
+                width={40}
+                height={40}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
               <span className="font-extrabold text-xl tracking-tight text-white">Meta Ai   <span className="text-primary">Automation</span></span>
             </div>
@@ -290,15 +296,23 @@ function App() {
         {/* Main Content Wrapper */}
         <div className="relative z-10 min-h-screen flex flex-col">
           <main className="flex-grow">
-            {currentView === 'home' && <Home />}
-            {currentView === 'support' && <Support />}
-            {currentView === 'docs' && <Documentation />}
-            {currentView === 'blog' && <Blog />}
-            {currentView === 'about' && <About />}
-            {currentView === 'privacy_policy' && <PrivacyPolicy />}
-            {currentView === 'cookie-policy' && <CookiePolicy />}
-            {currentView === 'terms-of-service' && <TermsOfService />}
-            {currentView === 'thank-you' && <ThankYou />}
+            <Suspense
+              fallback={
+                <div className="py-24 text-center text-slate-400" role="status" aria-live="polite">
+                  Loading experience...
+                </div>
+              }
+            >
+              {currentView === 'home' && <Home />}
+              {currentView === 'support' && <Support />}
+              {currentView === 'docs' && <Documentation />}
+              {currentView === 'blog' && <Blog />}
+              {currentView === 'about' && <About />}
+              {currentView === 'privacy_policy' && <PrivacyPolicy />}
+              {currentView === 'cookie-policy' && <CookiePolicy />}
+              {currentView === 'terms-of-service' && <TermsOfService />}
+              {currentView === 'thank-you' && <ThankYou />}
+            </Suspense>
           </main>
 
           {/* Footer */}
@@ -307,7 +321,15 @@ function App() {
               <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
                 <div className="col-span-1 md:col-span-2">
                   <div className="flex items-center gap-2 mb-6 cursor-pointer" onClick={() => navigateTo('home')}>
-                    <img alt="MetaAi Automator Logo" className="w-8 h-8 rounded-lg object-cover" src="/logo.png" />
+                    <img
+                      alt="MetaAi Automator Logo"
+                      className="w-8 h-8 rounded-lg object-cover"
+                      src="/logo.svg"
+                      width={32}
+                      height={32}
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <span className="font-extrabold text-xl text-white">Meta Ai   <span className="text-primary">Automation</span></span>
                   </div>
                   <p className="text-slate-500 max-w-sm mb-6">

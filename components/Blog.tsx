@@ -86,7 +86,15 @@ export const Blog = () => {
           {paginatedPosts.map(post => (
             <div key={post.id} className="group rounded-[2rem] bg-surface border border-white/10 overflow-hidden hover:border-primary/50 transition-all hover:-translate-y-2 duration-300">
               <div className="h-48 overflow-hidden relative">
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                  width={800}
+                  height={600}
+                />
                 <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                   {post.category}
                 </div>

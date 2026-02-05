@@ -15,6 +15,7 @@ import { Button } from './Button';
 import { PersonaDemo } from './PersonaDemo';
 import { LangContext } from '../LangContext';
 import { FEATURE_LIST } from '../translations';
+import { LiteYouTube } from './LiteYouTube';
 
 const EXTENSION_URL = 'https://chromewebstore.google.com/detail/oahcpmhnmcfjciaehfijhfjofjddjjij';
 
@@ -142,16 +143,10 @@ export const Home = () => {
           <div className="relative reveal reveal-delay-200">
             <div className="absolute -inset-1 bg-primary/20 rounded-[3rem] blur-2xl transition duration-500" />
             <div className="relative bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border-2 border-primary overflow-hidden aspect-video shadow-[0_0_60px_rgba(250,204,21,0.25)]">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/wCnv514L0uM?si=Xs2JRbbd3je9jZOb"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
+              <LiteYouTube
+                videoId="wCnv514L0uM"
+                title="Meta Ai Automator demo"
+                posterQuality="sddefault"
               />
             </div>
           </div>
@@ -356,7 +351,15 @@ export const Home = () => {
                   </div>
                   <p className={`mb-8 italic leading-relaxed ${testimonial.highlight ? 'text-white font-medium' : 'text-slate-300'}`}>"{testimonial.quote}"</p>
                   <div className="flex items-center gap-4">
-                    <img alt={testimonial.name} className={`w-12 h-12 rounded-full object-cover ${testimonial.highlight ? 'border-2 border-primary shadow-[0_0_10px_rgba(250,204,21,0.5)]' : 'border border-primary/30'}`} src={testimonial.img} />
+                    <img
+                      alt={testimonial.name}
+                      className={`w-12 h-12 rounded-full object-cover ${testimonial.highlight ? 'border-2 border-primary shadow-[0_0_10px_rgba(250,204,21,0.5)]' : 'border border-primary/30'}`}
+                      src={testimonial.img}
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <div>
                       <div className={`font-bold ${testimonial.highlight ? 'text-primary' : 'text-white'}`}>{testimonial.name}</div>
                       <div className="text-xs text-slate-500 font-bold uppercase">{testimonial.role}</div>
@@ -502,17 +505,11 @@ export const Home = () => {
               <X size={24} />
             </button>
 
-            {/* YouTube Iframe */}
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/wCnv514L0uM?si=Xs2JRbbd3je9jZOb&autoplay=1"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full rounded-[2.5rem]"
+            {/* Lazy YouTube player */}
+            <LiteYouTube
+              videoId="wCnv514L0uM"
+              title="Meta Ai Automator demo"
+              autoPlay
             />
           </div>
         </div>
