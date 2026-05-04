@@ -12,6 +12,7 @@ import { LangContext } from './LangContext';
 
 // Import Pages
 import { Home } from './components/Home';
+import { StickyBottomBar } from './components/StickyBottomBar';
 
 type View = 'home' | 'support' | 'docs' | 'blog' | 'about' | 'privacy_policy' | 'cookie-policy' | 'thank-you' | 'terms-of-service';
 
@@ -365,7 +366,7 @@ function App() {
             </div>
           </footer>
 
-
+          {currentView !== 'thank-you' && <StickyBottomBar />}
         </div>
       </div>
     </LangContext.Provider>
